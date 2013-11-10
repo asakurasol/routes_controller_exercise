@@ -1,4 +1,17 @@
 <h2> I AMA View </h2>
+<h2>Hello World</h2>
 <p>
+  <% first_product = Product.first %>
+
+  <% cheap_product = Product.where('price > 1').first %>
+     <p>
+      Product Name: "<%= first_product.name %>" costs $<%= first_product.price %>
+	   
+      The seller for this product is named '<%= first_product.user.name %>'
+	  
+      Our Chepest product is <%= cheap_product.name %>
+
+      we have <%= Product.count %> items!
+    </p>
   Find me in <%= Rails.root.join("app", "views", "products", __FILE__ ) %>
 </p>
